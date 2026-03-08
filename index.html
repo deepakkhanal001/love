@@ -5,17 +5,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>For My Love ❤️</title>
+<title>For Babe ❤️</title>
 
 <style>
 
 body{
 margin:0;
-font-family: 'Segoe UI', sans-serif;
-background: linear-gradient(135deg,#ff6a88,#ff99ac);
+font-family:'Segoe UI',sans-serif;
+background:linear-gradient(to bottom,#0f2027,#203a43,#2c5364);
 color:white;
 text-align:center;
 overflow-x:hidden;
+}
+
+/* stars */
+
+.star{
+position:fixed;
+width:2px;
+height:2px;
+background:white;
+animation:twinkle 2s infinite alternate;
+}
+
+@keyframes twinkle{
+from{opacity:0.3;}
+to{opacity:1;}
 }
 
 /* sections */
@@ -31,26 +46,24 @@ max-width:500px;
 margin:auto;
 }
 
-h1{
-font-size:34px;
-margin-bottom:20px;
-}
+/* typewriter */
 
-p{
-font-size:20px;
+#typewriter{
+font-size:22px;
 line-height:1.6;
+max-width:400px;
 }
 
 /* button */
 
 button{
 margin-top:30px;
-padding:16px 30px;
-font-size:20px;
+padding:15px 30px;
+font-size:18px;
 border:none;
-border-radius:40px;
+border-radius:30px;
 background:white;
-color:#ff3b6b;
+color:#203a43;
 cursor:pointer;
 transition:0.3s;
 }
@@ -59,43 +72,26 @@ button:hover{
 transform:scale(1.1);
 }
 
-/* floating hearts */
-
-.heart{
-position:fixed;
-bottom:-20px;
-font-size:20px;
-animation:float 7s linear infinite;
-}
-
-@keyframes float{
-0%{
-transform:translateY(0);
-opacity:1;
-}
-100%{
-transform:translateY(-900px);
-opacity:0;
-}
-}
-
 </style>
 
 </head>
 
 <body>
 
+<!-- background music -->
+
+<audio autoplay loop>
+<source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_8c0c3c1d4c.mp3?filename=romantic-piano-110086.mp3" type="audio/mpeg">
+</audio>
+
+
 <section>
 
-<h1>Hi My Love ❤️</h1>
+<h1>Hi Babe ❤️</h1>
 
 <p>
-If you are reading this, it means you opened something I made just for you.
-</p>
-
-<p>
-Not because I had to…  
-but because my heart couldn't stay silent anymore.
+Please scroll slowly.
+This page is from my heart.
 </p>
 
 </section>
@@ -103,99 +99,7 @@ but because my heart couldn't stay silent anymore.
 
 <section>
 
-<h1>There Is Something I Need To Say</h1>
-
-<p>
-I know I hurt you.
-</p>
-
-<p>
-And I know saying sorry will never fully erase the pain I caused.
-</p>
-
-<p>
-But please believe me when I say this:
-I regret it more than anything.
-</p>
-
-</section>
-
-
-<section>
-
-<h1>The Truth</h1>
-
-<p>
-You are not just someone in my life.
-</p>
-
-<p>
-You are the person who made ordinary days feel special.
-</p>
-
-<p>
-The person who made me smile when nothing else could.
-</p>
-
-<p>
-The person who changed my world.
-</p>
-
-</section>
-
-
-<section>
-
-<h1>Without You</h1>
-
-<p>
-Everything feels quieter.
-</p>
-
-<p>
-Days feel longer.
-</p>
-
-<p>
-And my heart keeps wishing
-I could go back and fix the moment I hurt you.
-</p>
-
-</section>
-
-
-<section>
-
-<h1>I Promise</h1>
-
-<p>
-I promise to grow.
-</p>
-
-<p>
-I promise to be better.
-</p>
-
-<p>
-Not just for you,
-but for us.
-</p>
-
-</section>
-
-
-<section>
-
-<h1>Because I Love You ❤️</h1>
-
-<p>
-Not in a simple way.
-</p>
-
-<p>
-But in the kind of way where losing you
-feels like losing a part of my soul.
-</p>
+<div id="typewriter"></div>
 
 </section>
 
@@ -208,13 +112,75 @@ feels like losing a part of my soul.
 Will you give us another chance?
 </p>
 
-<button onclick="yes()">Yes... let's try again ❤️</button>
+<button onclick="yes()">Yes… I’ll Stay ❤️</button>
 
 </section>
 
 
-
 <script>
+
+/* stars */
+
+for(let i=0;i<120;i++){
+let star=document.createElement("div");
+star.className="star";
+star.style.top=Math.random()*100+"vh";
+star.style.left=Math.random()*100+"vw";
+star.style.animationDuration=(Math.random()*2+1)+"s";
+document.body.appendChild(star);
+}
+
+/* typewriter message */
+
+const text = `Babe...
+
+I know I hurt you.
+
+And if I could take that pain away,
+I would do it a thousand times.
+
+You are not just someone in my life.
+
+You are the person who made my world brighter,
+my days happier,
+and my heart fuller.
+
+Without you things feel empty.
+
+I miss your smile.
+I miss your voice.
+I miss the little moments that made life beautiful.
+
+I promise to learn.
+I promise to grow.
+And I promise to protect your heart better.
+
+Because the truth is...
+
+I love you.
+
+And I don't want a future
+that doesn't have you in it.`;
+
+let i = 0;
+
+function typing(){
+
+if(i < text.length){
+
+document.getElementById("typewriter").innerHTML += text.charAt(i);
+
+i++;
+
+setTimeout(typing,40);
+
+}
+
+}
+
+typing();
+
+/* final message */
 
 function yes(){
 
@@ -224,14 +190,20 @@ document.body.innerHTML = `
 
 <div>
 
-<h1>I Love You ❤️</h1>
+<h1>I Love You Babe ❤️</h1>
 
 <p>
 Thank you for giving us another chance.
 </p>
 
 <p>
-I promise to protect your heart this time.
+And even if things take time...
+
+I will wait for you.
+</p>
+
+<p>
+Because you are worth every moment.
 </p>
 
 </div>
@@ -241,34 +213,6 @@ I promise to protect your heart this time.
 `;
 
 }
-
-/* floating hearts */
-
-function createHeart(){
-
-const heart=document.createElement("div");
-
-heart.classList.add("heart");
-
-heart.innerHTML="❤️";
-
-heart.style.left=Math.random()*100+"vw";
-
-heart.style.fontSize=Math.random()*25+15+"px";
-
-heart.style.animationDuration=Math.random()*3+4+"s";
-
-document.body.appendChild(heart);
-
-setTimeout(()=>{
-
-heart.remove();
-
-},7000);
-
-}
-
-setInterval(createHeart,400);
 
 </script>
 
